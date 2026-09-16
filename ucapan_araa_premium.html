@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Araa 🌸</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+*{box-sizing:border-box}
+:root{
+  --pink:#ff6fae;--pink2:#ff9bc8;--cream:#fff8fc;--ink:#392334;
+}
+body{
+  margin:0; min-height:100vh; overflow:hidden; font-family:'DM Sans',sans-serif;
+  color:var(--ink); background:
+  radial-gradient(circle at 15% 20%,#ffd9ea 0 10%,transparent 28%),
+  radial-gradient(circle at 85% 75%,#e9d9ff 0 9%,transparent 30%),
+  linear-gradient(135deg,#fff7fb,#f8f1ff);
+}
+.bg{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.spark{position:absolute;width:6px;height:6px;background:#fff;border-radius:50%;box-shadow:0 0 16px #fff;animation:float 6s linear infinite;opacity:.8}
+@keyframes float{0%{transform:translateY(110vh) scale(.5);opacity:0}20%{opacity:.9}100%{transform:translateY(-10vh) scale(1.4);opacity:0}}
+
+.app{position:relative;width:100%;height:100vh}
+.slide{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  padding:24px;opacity:0;transform:translateX(60px) scale(.98);
+  pointer-events:none;transition:opacity .65s ease,transform .75s cubic-bezier(.2,.8,.2,1);
+}
+.slide.active{opacity:1;transform:none;pointer-events:auto}
+.card{
+  width:min(760px,94vw);min-height:520px;padding:46px 42px;border:1px solid rgba(255,255,255,.8);
+  border-radius:34px;background:rgba(255,255,255,.72);backdrop-filter:blur(24px);
+  box-shadow:0 25px 80px rgba(112,59,91,.15);text-align:center;position:relative;overflow:hidden;
+}
+.card:before{
+  content:"";position:absolute;width:260px;height:260px;right:-100px;top:-110px;
+  background:#ffd3e6;border-radius:50%;filter:blur(10px);opacity:.7;
+}
+.badge{display:inline-block;padding:8px 15px;border-radius:999px;background:#fff;color:#d74d8c;font-size:13px;font-weight:700;letter-spacing:.5px;box-shadow:0 8px 20px #e8c5d8}
+h1{font-family:'Playfair Display',serif;font-size:clamp(32px,6vw,58px);line-height:1.08;margin:22px 0 15px}
+h2{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,46px);line-height:1.12;margin:20px 0 15px}
+p{font-size:17px;line-height:1.7;margin:0 auto 28px;max-width:620px;color:#684e60}
+.buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:570px;margin:0 auto}
+button{
+  border:0;padding:15px 18px;border-radius:17px;font:700 15px 'DM Sans',sans-serif;cursor:pointer;
+  color:#54263e;background:#fff;box-shadow:0 9px 24px rgba(90,40,70,.10);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+button:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(90,40,70,.16)}
+.primary{background:linear-gradient(135deg,#ff6fae,#ff93c2);color:white;box-shadow:0 12px 28px rgba(255,111,174,.3)}
+.full{grid-column:1/-1}
+.tease{position:fixed;z-index:20;font-size:28px;font-weight:700;pointer-events:none;animation:tease .85s ease forwards}
+@keyframes tease{0%{transform:scale(.6) rotate(-8deg);opacity:0}25%{opacity:1}100%{transform:translateY(-55px) scale(1.05) rotate(5deg);opacity:0}}
+.progress{position:absolute;top:18px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:5}
+.dot{width:34px;height:5px;border-radius:10px;background:#eadce5;transition:.3s}.dot.on{background:#ff75ad}
+.flower{font-size:48px;display:block;animation:sway 2.8s ease-in-out infinite;transform-origin:bottom}
+@keyframes sway{50%{transform:rotate(5deg) scale(1.04)}}
+.choice.correct{animation:correct .5s ease}
+@keyframes correct{50%{transform:scale(1.08)}}
+.wrong{position:relative}
+.final{font-size:18px}
+.final strong{color:#df4d91}
+.back{margin-top:22px;background:#fff1f8;color:#d14b89}
+.bloom{position:fixed;inset:0;z-index:100;pointer-events:none;display:none;align-items:center;justify-content:center;background:rgba(255,248,252,.86)}
+.bloom.show{display:flex}
+.bloomFlower{font-size:70px;animation:bloom 1.25s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes bloom{0%{transform:scale(.05) rotate(-30deg);opacity:0}45%{transform:scale(1.7) rotate(10deg);opacity:1}100%{transform:scale(7) rotate(0);opacity:0}}
+@media(max-width:600px){
+ .card{padding:35px 20px;min-height:500px;border-radius:27px}
+ .buttons{grid-template-columns:1fr}
+ .full{grid-column:auto}
+}
+</style>
+</head>
+<body>
+<div class="bg" id="bg"></div>
+<div class="progress">
+  <span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+</div>
+
+<div class="app">
+<section class="slide active" id="s1">
+ <div class="card">
+  <span class="badge">🌷 SEBELUM DIBUKA</span>
+  <h1>Mau buka sekarang<br>apa tahun depan Araa wkwk? 😭</h1>
+  <p>Jangan lama-lama mikirnya. Ada yang sudah niat bikin ini khusus buat kamu 🌸</p>
+  <div class="buttons">
+   <button class="primary" onclick="next(2)">Buka sekarang 💗</button>
+   <button class="runaway" onclick="teaseBtn(this)">Buka terpaksa 😏</button>
+   <button class="runaway" onclick="teaseBtn(this)">Nggak ah males 🙄</button>
+  </div>
+ </div>
+</section>
+
+<section class="slide" id="s2">
+ <div class="card">
+  <span class="flower">🌸</span>
+  <span class="badge">🌼 PERTANYAAN KEDUA</span>
+  <h2>Gimana keadaanmu sekarang<br>Ara imut, lucu, manis, cantik, paket lengkaplah? 😌</h2>
+  <p>Pilih jawaban yang paling menggambarkan keadaanmu hari ini.</p>
+  <div class="buttons">
+   <button onclick="wrong(this)">A. Lagi capek 😵‍💫</button>
+   <button onclick="wrong(this)">B. Lagi ngantuk 😴</button>
+   <button onclick="wrong(this)">C. Lagi banyak pikiran 🤯</button>
+   <button class="primary choice" onclick="next(3)">D. Lagi ga baik baik aja butuh Semangat 🌷</button>
+  </div>
+ </div>
+</section>
+
+<section class="slide" id="s3">
+ <div class="card">
+  <span class="flower">💐</span>
+  <span class="badge">💌 </span>
+  <h2>Kalau senyum kamu dijadiin pelajaran,<br>aku bakal rajin masuk kelas terus 😭</h2>
+  <p>Tau ga Menurut Araa, kenapa?</p>
+  <div class="buttons">
+   <button onclick="wrong(this)">Karena gurunya galak 😭</button>
+   <button onclick="wrong(this)">Karena ada PR terus 😵</button>
+   <button onclick="wrong(this)">Karena kelasnya dingin 🥶</button>
+   <button class="primary" onclick="next(4)">Karena senyumnya bikin betah 🌸</button>
+  </div>
+ </div>
+</section>
+
+<section class="slide" id="s4">
+ <div class="card">
+  <span class="flower">🌷</span>
+  <span class="badge">✨ PESAN TERAKHIR</span>
+  <h2>Semangat belajarnya, Araa! 📚🌸</h2>
+  <p class="final">
+   Jangan suka bolos belajar, yang pinter belajarnya yaa 😤<br>
+   Semoga hari-harimu selalu dipenuhi hal-hal baik, ketawa yang banyak,
+   dan jangan lupa istirahat kalau capek.<br><br>
+   <strong>Kalau ilmu bisa bikin masa depan cerah,<br>senyum kamu kayaknya sudah bikin hariku cerah duluan. 😌🌷</strong>
+  </p>
+  <button class="back primary" onclick="backHome()">↩ Balik ke menu awal</button>
+ </div>
+</section>
+</div>
+
+<div class="bloom" id="bloom"><div class="bloomFlower">🌸</div></div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const dots=[...document.querySelectorAll('.dot')];
+let current=0;
+
+function bloomThen(target){
+  const b=document.getElementById('bloom');
+  b.classList.add('show');
+  setTimeout(()=>{
+    slides[current].classList.remove('active');
+    current=target-1;
+    slides[current].classList.add('active');
+    dots.forEach((d,i)=>d.classList.toggle('on',i===current));
+  },480);
+  setTimeout(()=>b.classList.remove('show'),1250);
+}
+function next(n){ bloomThen(n); }
+
+function teaseBtn(btn){
+  const emojis=['😏','🙄','😂','🤭','🫵😭','wkwk'];
+  const t=document.createElement('div');
+  t.className='tease';
+  t.textContent=emojis[Math.floor(Math.random()*emojis.length)]+' nggak boleh! 😭';
+  document.body.appendChild(t);
+  const r=btn.getBoundingClientRect();
+  t.style.left=Math.max(10,Math.min(window.innerWidth-130,r.left+Math.random()*80-20))+'px';
+  t.style.top=Math.max(20,r.top-20)+'px';
+  btn.style.position='fixed';
+  btn.style.left=Math.random()*(window.innerWidth-170)+'px';
+  btn.style.top=Math.random()*(window.innerHeight-70)+'px';
+  setTimeout(()=>t.remove(),850);
+}
+function wrong(btn){
+  const label=btn.textContent;
+  const msgs = label.includes('capek')
+    ? ['😏 Sama aku juga capek... capek mikirin kamu terus! 💗']
+    : label.includes('ngantuk')
+    ? ['🤭 Ngantuk? Pantes... mungkin kebanyakan mikirin aku wkwk 😭💗']
+    : label.includes('banyak pikiran')
+    ? ['😂 Jangan banyak pikiran, cukup satu aja... aku! 😌🌸']
+    : ['😏 Salah! Tapi nggak apa-apa, kamu tetap manis kok 💗'];
+  const t=document.createElement('div');
+  t.className='tease';
+  t.textContent=msgs[Math.floor(Math.random()*msgs.length)];
+  document.body.appendChild(t);
+  const r=btn.getBoundingClientRect();
+  t.style.left=Math.max(10,Math.min(window.innerWidth-260,r.left))+'px';
+  t.style.top=Math.max(20,r.top-15)+'px';
+  btn.classList.add('wrong');
+  setTimeout(()=>{t.remove();btn.classList.remove('wrong')},850);
+}
+function backHome(){
+  const b=document.getElementById('bloom');
+  b.classList.add('show');
+  setTimeout(()=>{
+    slides[current].classList.remove('active');
+    current=0;slides[0].classList.add('active');
+    dots.forEach((d,i)=>d.classList.toggle('on',i===0));
+    document.querySelectorAll('.runaway').forEach(x=>{x.style.position='';x.style.left='';x.style.top='';});
+  },480);
+  setTimeout(()=>b.classList.remove('show'),1250);
+}
+
+// Sparkles background
+for(let i=0;i<28;i++){
+ const s=document.createElement('i');s.className='spark';
+ s.style.left=Math.random()*100+'%';s.style.animationDelay=(-Math.random()*6)+'s';
+ s.style.animationDuration=(4+Math.random()*5)+'s';s.style.width=s.style.height=(3+Math.random()*5)+'px';
+ document.getElementById('bg').appendChild(s);
+}
+</script>
+</body>
+</html>
